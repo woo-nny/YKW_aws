@@ -1,0 +1,65 @@
+{% extends 'crime/base.html' %}
+{% load static %}
+
+{% block bodys %}
+<body class='frontpage'>
+{% endblock bodys %}
+
+{% block contents %}
+<div class="container">
+	<section class="background">
+		<div class="content-wrapper">
+			<div class="intro">
+				<h1><span class="smaller wow zoomIn" id="smaller_font" data-wow-duration="2s" data-wow-delay="0.5">국회의원 범죄 이력 조회</span>
+				<span class="big wow pulse" id="big_color" data-wow-duration="1s" data-wow-delay="0s">Crime</span><br/>
+				<span class="small wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">- in Politics -</span>
+				</h1>
+			</div>
+		</div>
+	</section>
+	<section class="background">
+		<div class="content-wrapper">
+			<div class='d3-div'>
+					<svg></svg>
+					<div id="info"></div>
+			</div>
+		</div>
+	</section>
+	<section class="background">
+        <div class="content-wrapper">
+			<div class='info-wrapper'>
+				<span class='crimes-title'>Crimes</span>
+				<!-- <span><a class='map-choice' href="#" onclick='clickreturn()' rel="noopener noreferrer">지도선택</a></span> -->
+				<span><button id ="button_map"class='map-choice' href="#" onclick='clickreturn()' rel="noopener noreferrer">지도선택</button></span>
+				<div class='row'>
+					<div class='left-column'>
+						
+					</div>
+					<div class='right-column'>
+							<div class='myphoto'>
+								<img class='con_photo'>
+							</div>
+							<ul>
+								<li><strong>이름 : </strong><span id="con_name"></span></li>
+								<li><strong>지역구 : </strong><span id="con_district"></span></li>
+								<li><strong>정당 : </strong><span id="con_party"></span></li>
+								<li><strong>재선횟수 : </strong><span id="con_elected_num"></span></li>
+							</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+    </section>
+</div>
+<div>
+<form>
+	<input type="hidden" name='section'/> 
+	<button
+<form/>
+</div>
+<!-- Scripts -->
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src={% static 'crime/js/d3map.js' %}></script>
+{% endblock contents %}
+

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href={% static 'accounts/css/style.css' %} rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <div>
+        <div class="signup">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="signup_top">
+                    <div class="signup_title">회원가입</div>
+                </div>
+                <div class="signup_middle">
+                    <table class="table table-boardered">
+                        <tr>
+                            <th>아이디</th>
+                            <td>{{form.username}}</td>        
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td>{{form.password1}}</td>      
+                        </tr>
+                         
+                        <tr>
+                            <th>비밀번호 확인</th>
+                            <td>{{form.password2}}</td>        
+                        </tr>
+                        <tr>
+                            <th>나이</th>
+                            <td>{{form.age}}</td>        
+                        </tr>
+                        <tr>
+                            <th>시</th>
+                            <td>
+                                {{form.city}}
+                            </td>    
+                        </tr>
+                         
+                        <tr>
+                            <th>지역구</th>
+                            <td>
+                                {{form.district}}    
+                            </td>     
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+                <div class="signup_bottom">
+                    <div class="signup_bottom_left">
+                        <button type = "submit" class="signup_btn">가입하기</button>
+                    </div>
+                    <div class="signup_bottom_right">
+                        <button class="cancel_btn" type="reset">취소</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

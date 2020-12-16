@@ -1,0 +1,57 @@
+{% comment %} 프로필 수정 {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href={% static 'accounts/css/style.css' %} rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 수정</title>
+</head>
+<body>
+    <div>
+        <div class="profile">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="signup_top">
+                    <div class="signup_title">프로필 수정</div>
+                </div>
+                <div class="signup_middle">
+                    <table class="table table-boardered">
+                        <th>아이디</th>
+                            <td> {{user}} </td>        
+                        </tr>
+                        <tr>
+                            <th>나이</th>
+                            <td>{{form.age}}</td>        
+                        </tr>
+                        <tr>
+                            <th>시</th>
+                            <td>
+                                {{form.city}}
+                            </td>    
+                        </tr>
+                         
+                        <tr>
+                            <th>지역구</th>
+                            <td>
+                                {{form.district}}
+                            </td>     
+                        </tr>
+                    </table>
+                </div> 
+                <div class="signup_bottom">
+                    <div class="signup_bottom_left">
+                        <button type = "submit" class="signup_btn">수정하기</button>   
+                    </div>
+                    <div class="signup_bottom_right">
+                        <button class="cancel_btn" type="reset">취소</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

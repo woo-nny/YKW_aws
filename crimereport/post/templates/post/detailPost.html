@@ -1,0 +1,37 @@
+{% extends 'crime/base.html' %}
+{% load static %}
+
+{% block bodys %}
+<link rel="stylesheet" href={% static "post/css/postStyle.css" %}>
+<body class='detailpage'>
+{% endblock bodys %}
+
+{% block contents %}
+    <div class='detail-container'>
+        <div class='detail-postwrapper'>
+            <span class='detail-pagetitle'>Crime</span>
+            <span class='detail-title'>{{detail_post.title}}</span>
+            <p class='detail-idbar'>작성자 : {{detail_post.author}}</p>
+            <span class='detail-text'>{{detail_post.text}}</span>
+            {
+        </div>
+        {% if user == detail_post.author %}
+            <a href={% url 'updatepost' detail_post.id %}><button class='writepost'>수정하기</button></a>
+        {% endif %}
+        <ul>
+            <form method="post">
+            {% comment %} onsubmit="input_comment({{detail_post.id}})" {% endcomment %}
+                {% csrf_token %}
+                <input type="text" name="text" id="text">
+                <button type="submit" class='writepost'>댓글입력</button>
+            </form>
+        {% for reple in comments%}
+            <li>
+                <span class='reple-text'>{{reple.text}}</span>
+                <span class='reple-created'>{{reple.created}}</span>
+            <li>
+        {% endfor %}
+        </ul>
+    </div>
+    <script src={% static 'post/js/postList.js' %}></script>
+{% endblock contents %}

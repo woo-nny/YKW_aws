@@ -1,0 +1,217 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body{
+   background-color: rgb(54, 73, 93);
+}
+.login_top{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.login_title{
+    color: black;
+    font-family: Great Vibes;
+    font-size: 60px;
+}
+.login{
+    position:absolute;
+    width:300px;
+    height:500px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+}
+input.underline_id {
+    width: 90%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:20px;
+    height:25px;
+    background: none;
+    border-bottom: 2px solid #adadad;
+    font-family: Oswald;
+    margin-bottom: 15px;
+}
+input.underline_pw {
+    width: 90%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:20px;
+    height:25px;
+    background: none;
+    border-bottom: 2px solid #adadad;
+    font-family: Oswald;
+    margin-top: 15px;
+}   
+.login_btn {
+    margin-top: 40px;
+    position:relative;
+    left:31%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    width:62%;
+    height:40px;
+    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+  }
+.google_img{
+    margin-top: -10px;
+}
+.login_btn:hover {
+    background-position: right;
+}
+.login_bottom{
+    margin-top: 70px;
+    
+}
+.signup{
+    position:absolute;
+    width:500px;
+    height:600px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+}
+.signup_title{
+    margin-top: 10px;
+    font-family: 'Nanum Brush Script', cursive;
+    color: black;
+    font-size: 30px;
+}
+.signup_bottom{
+    margin-top: 70px;
+    width: 100%;
+}
+.signup_bottom_right{
+    
+    display: inline-block;   
+}
+.signup_bottom_left{
+    margin-left: 5%;
+    float: left;
+}
+.signup_btn{
+    width: 200px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(52, 140, 242);
+    font-size: 30px;
+    font-weight: bold;
+}
+.cancel_btn{
+    width: 200px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(52, 140, 242);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.profile{
+    position:absolute;
+    width:500px;
+    height:400px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px; 
+}
+.passwordedit{
+    position:absolute;
+    width:600px;
+    height:500px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px; 
+}
+.delete{
+    position:absolute;
+    width:600px;
+    height:200px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px; 
+}
+.delete_btn{
+    margin-top: 40px;
+    position:relative;
+    left:31%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    width:62%;
+    height:40px;
+    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+}
+
+.delete_btn:hover {
+    background-position: right;
+}
+.delete_top{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.delete_title{
+    color: black;
+    font-family: Great Vibes;
+    font-size: 60px;
+}
+.delete{
+    position:absolute;
+    width:300px;
+    height:500px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+}
+.delete_middle{
+    margin-top: 30%;
+}
+.delete_bottom{
+    margin-top: 30%;
+}

@@ -1,0 +1,107 @@
+{% extends 'crime/base.html' %}
+{% load static %}
+
+{% block bodys %}
+<link rel="stylesheet" href={% static "post/css/postStyle.css" %}>
+<body>
+{% endblock bodys %}
+
+{% block contents %}
+    <div class="container">
+        <div class='postwrapper'>
+            <span class='post-title'>Post</span>
+            <div class='click-party'>
+                <form action="{% url 'postlist' %}" method="get">
+                    <button type='submit' name='party' value='더불어민주당' />
+                        <img src={% static 'post/img/minju.jpg'%} alt='더불어민주당'>
+                    </button>
+                    <button type='submit' name='party' value='국민의힘' />
+                        <img src={% static 'post/img/power.jpg'%} alt="국민의힘">
+                    </button>
+                    <button type='submit' name='party' value='정의당' />
+                        <img src={% static 'post/img/jungeui.png'%} alt='정의당'>
+                    </button>
+                    <button type='submit' name='party' value='국민의당'  alt ='국민의당'/>
+                        <img src={% static 'post/img/citizen.jpg'%} alt='국민의당'>
+                    </button>
+                </form>
+                <a href={% url 'writepost' %}><button class='writepost'>글쓰기</button></a>
+
+            </div>
+            <div class='postList'>
+                <table class="sub_news" border="1" cellspacing="0">
+                    <colgroup>
+                        <col width ="110">
+                        <col width ="100">
+                        <col width ="80">
+                    </colgroup>
+                    <thead class="postlist_thead">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">내용</th>
+                            <th scope="col">작성일</th>
+                            <th scope="col">글쓴이</th>
+                        </tr>
+                    </thead>
+                    <tbody class="postlist_tbody">
+                        {% for post,cong_person in page_obj %}
+                        <tr>
+                            <td class="No">
+                                {{post.id}}
+                            </td>
+                            <td class="title">
+                                <a href={% url 'detailpost' post.id %}>{{ post.title }}</a>
+                            </td>
+                            <td class="text">
+                                {{ post.text|truncatechars:20}}
+                            <td class="created">
+                                {{ post.created }}
+                            </td>
+                            <td class="name">
+                                {{ cong_person }}
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="page_wrap">
+                <div class="page_nation">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1" class='arrow pprev'></a>
+                        <a href="?page={{ page_obj.previous_page_number }}" class='arrow prev'></a>
+                    {% endif %}
+                    {% for i in page_list %}
+                    {% if page_obj.numbers == i %}
+                        <a href=''><strong>{{i}}</strong></a>
+                    {% else %}
+                        <a href="?page={{i}}">{{ i }} </a>
+                    {% endif %}
+                        
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class='arrow next'></a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}" class='arrow nnext'></a>
+                    {% endif %}
+                    
+                </div>
+            </div>
+            <div class='search-post'>
+                <form action="{% url 'postlist' %}" method="get" class="search">                    
+                    
+                    <select name="Search_order">
+                        <option value="">제목+내용</option>
+                        <option value="title">제목</option>
+                        <option value="text">내용</option>
+                    </select>
+                    <input type="text" name="search_text" class="keyword" autocomplete="off">                                        
+                    <button type="submit" class="search_button"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src={% static 'post/js/postList.js' %}></script>
+{% endblock contents %}

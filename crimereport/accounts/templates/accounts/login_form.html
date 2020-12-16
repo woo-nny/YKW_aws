@@ -1,0 +1,43 @@
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href={% static 'accounts/css/style.css' %} rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <div class= 'login'>
+            
+            <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class='login_top'>
+                    <div class="login_title">Login</div>
+                </div>
+                <div class= 'login_middle'>
+                    <input class="underline_id" type="text" placeholder="ID" name="username">
+                    <input class="underline_pw" type="password" placeholder="PW" name="password">
+                    <button class="login_btn" type="submit">LOGIN</button>
+                    <a href="{% provider_login_url 'google' %}" ><img src="../../static/accounts/img/google_btn.png" class="google_img" alt=""></a>
+                </div>
+            </form>             
+            <div class='login_bottom'>
+                <h2> Don't you have ID? <a href="{% url 'signup' %}">sign up</a></h2>
+                <!-- <a href = "{% provider_login_url 'google' %}"> Google Login </a> -->
+            </div>
+            </form> 
+            <div>
+                {% if form.errors %}
+                <p> ID 나 비밀번호가 일치하지 않습니다 </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.DS_Store
+.vscode
+node_modules
+dist/*
+*.log
+Project/db.sqlite3
+**/db.sqlite3
+__pycache__
+db_settings.py
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
